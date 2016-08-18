@@ -4,7 +4,7 @@ This is a 12-channel 20-bit, +/-10V (+/-20V optional) 2MSPS DAC board designed f
 
 We've tested the cards at +/-10V, and have achieved reliable update rates at 2MSPS (above the 1.33MSPS datasheet spec for ad5791). Output slew's of ~50V/us have been measured on voltage swings >1V. Noise output is DAC-code dependent currently limited by the reference-noise (~100nV/sqrt(Hz)). This can be improved by using an adapter reference board with heavy filtering, 3-pole 1.5Hz cut-off RC filter with capacitors in a bootstrap configuration to minimize offset errors, which reduces the white-noise level to that dominated by the DAC and output op-amp of ~10-20nV/sqrt(Hz)
 
-![image](docs/2016-06-13_DLPRO674_8_1.png)
+![image](images/2016-06-13_DLPRO674_8_1.png)
 
 
 ##Application aim 
