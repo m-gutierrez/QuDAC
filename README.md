@@ -11,8 +11,16 @@ We've tested the cards at +/-10V, and have achieved reliable update rates at 2MS
 
 Trapped ion quantum computing (TIQC) requires dozens of independently controllable voltage sources with low noise (<100nV/sqrt(Hz)), wide-output range (+/-10V) and fast update rates (>1MSPS). These sources should be extend-able while maintaining synchronized updates, and allow for asynchronous clocking. 
 
+
+
+
+
 ###Output range
 In the trap for our particular experiment, Sandia's high optical access trap (HOA v2), there are 96 independent control electrodes. With a trapping height ~68micron, an electrode pitch of ~70micron and control electrodes between the RF electrodes the HOA requires voltages of ~1-4V for trapping potentials producing secular frequencies $\omega_{sec} \approx 2\pi 1MHz$. And allows for +/-20V without damage to the on-chip RF-shunting capacitors. 
+
+###precision
+
+
 
 
 ###Noise level
@@ -27,9 +35,15 @@ This sets the time scale how changes to control voltages will affect the ions mo
 The density of the DAC's per card and the clocking rate. where chosen to meet more general back-plane specifications, which takes into account additional devices of interest, clocking speeds, types of isolation achievable over various clock speeds and bus-size. In the end, a 36-bit backplane bus allows for 12-DAC's with independent sync,clock and data lines. In addition to these 36-bits there are an additional 8-bits which by-pass the card select buffers on the backplane interface, which we connect the DAC update pin (LDAC) to allowing multiple cards to be updated simultaneously. 
 
 
-##DAC choice
-The DAC which satisfied, 
 
 #Adapters 
+
+There are 3 adapter cards used in our setup. The first `Combine2Cards' allows us to combine two of the QuDAC cards into a single 24 channel output. The card can be placed directly on the cards within the rack, designed for accommodate the 7HP spacing of the QuACK system. The pin-out is made such that each control voltage is routed as a twisted pair with a ground wire using standard db50 cables. 
+
+The second card, '24CH-2x24CH', copies one 24 channel output into 2 identical pin-out 24-channel outputs. Allowing 48 DAC's to control all 96 trap control voltages. The card also has a 3rd copy for probing voltage outputs.
+
+The final card, 'filterboard', takes two 24-channel inputs and routes them into a single db50-connector. The board also contains 48 7-pole (or 3-pole) coilcraft.com LC filters. In our setup, these are 7-pole 300kHz LC-filters, providing 80db suppression at 1-2MHz. This board is intended to plug directly into the vacuum chamber experiment flange, which routes 100 control signals into the trap-chip through two DB-50 connectors. One of thees boards should also be configured with the resonator-line populated. On our setup, this line consists of a hand-wound ~500nH inductor, connecting to ~20pF trap capacitance producing a ~50MHz resonant frequency, and ~300pF of matching capacitance. The RF tap, consists of a high-voltage 0.2pF capacitor and a 100pF capacitor for a ~1/500 sampling voltage gain. 
+
+
 
 
