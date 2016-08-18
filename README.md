@@ -12,12 +12,12 @@ We've tested the cards at +/-10V, and have achieved reliable update rates at 2MS
 The board contains 6-layers. This was mostly due to a panel order with other designs requiring 6 layers. The board could easily be re-drawn with 4 layers.
 The current layout is 
 
-top	: layer 1 - analog signals
-	: layer 2 - ground plane
-	: layer 3 - analog signals
-	: layer 4 - power planes
-	: layer 5 - ground plane
-bot	: layer 6 - digital signals
++top: layer 1 - analog signals
++	: layer 2 - ground plane
++	: layer 3 - analog signals
++	: layer 4 - power planes
++	: layer 5 - ground plane
++bot: layer 6 - digital signals
 
 ##Application aim 
 
