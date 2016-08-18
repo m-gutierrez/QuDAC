@@ -7,6 +7,18 @@ This is a 12-channel 20-bit, +/-10V (+/-20V optional) 2MSPS DAC board designed f
 We've tested the cards at +/-10V, and have achieved reliable update rates at 2MSPS (above the 1.33MSPS datasheet spec for ad5791). Output slew's of ~50V/us have been measured on voltage swings >1V. Noise output is DAC-code dependent currently limited by the reference-noise (~100nV/sqrt(Hz)). This can be improved by using an adapter reference board with heavy filtering, 3-pole 1.5Hz cut-off RC filter with capacitors in a bootstrap configuration to minimize offset errors, which reduces the white-noise level to that dominated by the DAC and output op-amp of ~10-20nV/sqrt(Hz)
 
 
+##Layout 
+
+The board contains 6-layers. This was mostly due to a panel order with other designs requiring 6 layers. The board could easily be re-drawn with 4 layers.
+The current layout is 
+
+top	: layer 1 - analog signals
+	: layer 2 - ground plane
+	: layer 3 - analog signals
+	: layer 4 - power planes
+	: layer 5 - ground plane
+bot	: layer 6 - digital signals
+
 ##Application aim 
 
 Trapped ion quantum computing (TIQC) requires dozens of independently controllable voltage sources with low noise (<100nV/sqrt(Hz)), wide-output range (+/-10V) and fast update rates (>1MSPS). These sources should be extend-able while maintaining synchronized updates, and allow for asynchronous clocking. 
