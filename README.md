@@ -1,10 +1,8 @@
 #QuDAC
 
-This is a 12-channel 20-bit, +/-10V (+/-20V optional) 2MSPS DAC board designed for the Quanta rack system (QuACK). The card was designed to meet the bellow system requirements while also being simple to layout / populate (since we assemble these by-hand). All components should be very standard and easy to source, and if possible relatively cheap, a huge exception to this was the use of the ad5791 DAC chip, however there is a a slightly cheaper 18-bit ad5781 which is a drop-in replacement. 
+This is a 12-channel 20-bit, +/-10V (+/-20V optional) 2MSPS DAC board designed for the Quanta rack system (QuACK). The card was designed to meet the system requirements described bellow while also being simple to populate and interface with the experiment chamber. Since we assemble these by-hand, we wanted as few components as possible while still meeting the experiment requirements. All components should be standard and easy to source, and if possible relatively cheap. A huge exception to the cheap criterion was the use of the ad5791 DAC chip, however there is a a slightly cheaper 18-bit ad5781 which is a drop-in replacement. 
 
 We've tested the cards at +/-10V, and have achieved reliable update rates at 2MSPS (above the 1.33MSPS datasheet spec for ad5791). Output slew's of ~50V/us have been measured on voltage swings >1V. Noise output is DAC-code dependent currently limited by the reference-noise (~100nV/sqrt(Hz)). This can be improved by using an adapter reference board with heavy filtering, 3-pole 1.5Hz cut-off RC filter with capacitors in a bootstrap configuration to minimize offset errors, which reduces the white-noise level to that dominated by the DAC and output op-amp of ~10-20nV/sqrt(Hz)
-
-![image](images/2016-06-13_DLPRO674_8_1.png)
 
 
 ##Application aim 
@@ -38,12 +36,27 @@ The density of the DAC's per card and the clocking rate. where chosen to meet mo
 
 #Adapters 
 
-There are 3 adapter cards used in our setup. The first `Combine2Cards' allows us to combine two of the QuDAC cards into a single 24 channel output. The card can be placed directly on the cards within the rack, designed for accommodate the 7HP spacing of the QuACK system. The pin-out is made such that each control voltage is routed as a twisted pair with a ground wire using standard db50 cables. 
+There are 3 adapter cards used in our setup. Which assist in converting the card channels into the experiments two DB-50 connectors. 
 
+##Combine2Cards
+The first `Combine2Cards' allows us to combine two of the QuDAC cards into a single 24 channel output. The card can be placed directly on the cards within the rack, designed for accommodate the 7HP spacing of the QuACK system. The pin-out is made such that each control voltage is routed as a twisted pair with a ground wire using standard db50 cables. 
+
+##24CH-2x24CH
 The second card, '24CH-2x24CH', copies one 24 channel output into 2 identical pin-out 24-channel outputs. Allowing 48 DAC's to control all 96 trap control voltages. The card also has a 3rd copy for probing voltage outputs.
 
+##filterboard
 The final card, 'filterboard', takes two 24-channel inputs and routes them into a single db50-connector. The board also contains 48 7-pole (or 3-pole) coilcraft.com LC filters. In our setup, these are 7-pole 300kHz LC-filters, providing 80db suppression at 1-2MHz. This board is intended to plug directly into the vacuum chamber experiment flange, which routes 100 control signals into the trap-chip through two DB-50 connectors. One of thees boards should also be configured with the resonator-line populated. On our setup, this line consists of a hand-wound ~500nH inductor, connecting to ~20pF trap capacitance producing a ~50MHz resonant frequency, and ~300pF of matching capacitance. The RF tap, consists of a high-voltage 0.2pF capacitor and a 100pF capacitor for a ~1/500 sampling voltage gain. 
 
 
+#System performance
+
+
+## range, offset and non-linearity
+
+## noise spectral density
+
+## update rate, slew rate, tone-purity
+
+## synchronous update, clock noise
 
 
