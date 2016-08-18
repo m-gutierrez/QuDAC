@@ -1,5 +1,7 @@
 #QuDAC
 
+![QuDAC](images/QuDACBrd.png)
+
 This is a 12-channel 20-bit, +/-10V (+/-20V optional) 2MSPS DAC board designed for the Quanta rack system (QuACK). The card was designed to meet the system requirements described bellow while also being simple to populate and interface with the experiment chamber. Since we assemble these by-hand, we wanted as few components as possible while still meeting the experiment requirements. All components should be standard and easy to source, and if possible relatively cheap. A huge exception to the cheap criterion was the use of the ad5791 DAC chip, however there is a a slightly cheaper 18-bit ad5781 which is a drop-in replacement. 
 
 We've tested the cards at +/-10V, and have achieved reliable update rates at 2MSPS (above the 1.33MSPS datasheet spec for ad5791). Output slew's of ~50V/us have been measured on voltage swings >1V. Noise output is DAC-code dependent currently limited by the reference-noise (~100nV/sqrt(Hz)). This can be improved by using an adapter reference board with heavy filtering, 3-pole 1.5Hz cut-off RC filter with capacitors in a bootstrap configuration to minimize offset errors, which reduces the white-noise level to that dominated by the DAC and output op-amp of ~10-20nV/sqrt(Hz)
@@ -16,7 +18,7 @@ Trapped ion quantum computing (TIQC) requires dozens of independently controllab
 ###Output range
 In the trap for our particular experiment, Sandia's high optical access trap (HOA v2), there are 96 independent control electrodes. With a trapping height ~68micron, an electrode pitch of ~70micron and control electrodes between the RF electrodes the HOA requires voltages of ~1-4V for trapping potentials producing secular frequencies $\omega_{sec} \approx 2\pi 1MHz$. And allows for +/-20V without damage to the on-chip RF-shunting capacitors. 
 
-###precision
+###Precision
 
 
 
