@@ -1,5 +1,13 @@
 #QuDAC
 
+***TODO
++	Update performance measurements
++	include pin-out maps
++	link to ion trap theory, for voltage requirement definitions. 
++	include BOM
++	include assembly photos
+
+
 ![QuDAC](images/QuDACBrd.png)
 
 This is a 12-channel 20-bit, +/-10V (+/-20V optional) 2MSPS DAC board designed for the Quanta rack system (QuACK). The card was designed to meet the system requirements described bellow while also being simple to populate and interface with the experiment chamber. Since we assemble these by-hand, we wanted as few components as possible while still meeting the experiment requirements. All components should be standard and easy to source, and if possible relatively cheap. A huge exception to the cheap criterion was the use of the ad5791 DAC chip, however there is a a slightly cheaper 18-bit ad5781 which is a drop-in replacement. 
@@ -18,6 +26,17 @@ The current layout is
 +	layer 4 - power planes
 +	layer 5 - ground plane
 +	layer 6 - digital signals (bot)
+
+
+##component choice
+
+The components where chosen to meet the system requirements, here is a list of the key QuDAC components with a list of the relevant performance spec's.
+
++	AD5791: DAC, 20-bit, +/-15V supply range, NSD <10nV/sqrt(Hz), 1-2MSPS update rate
++	AD8676: op-amp, +/-15V supply range, NSD <10nV/sqrt(Hz), 10MHz GBP
++	AD8620: op-amp, +/-12V supply range, NSD <10nV/sqrt(Hz), 50MHz GBP, <1us settling to 20-bit accuracy
++	See card-buffer for description of backplane interface.
+
 
 ##Application aim 
 
