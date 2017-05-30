@@ -44,13 +44,10 @@ Trapped ion quantum computing (TIQC) requires dozens of independently controllab
 
 
 
-
-
 ###Output range
 In the trap for our particular experiment, Sandia's high optical access trap (HOA v2), there are 96 independent control electrodes. With a trapping height ~68micron, an electrode pitch of ~70micron and control electrodes between the RF electrodes the HOA requires voltages of ~1-4V for trapping potentials producing secular frequencies $\omega_{sec} \approx 2\pi 1MHz$. And allows for +/-20V without damage to the on-chip RF-shunting capacitors. 
 
 ###Precision
-
 
 
 
