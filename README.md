@@ -53,7 +53,7 @@ In the trap for our particular experiment, Sandia's high optical access trap (HO
 
 ### Noise level
 
-For room temperature traps typical electric field noise at the ion, due to yet-unknown surface effects, is around ($S_{\nu} \approx 10 \mu V /\sqrt{Hz}$), which corresponds to an electrode-voltage noise of (~nV/sqrt(Hz)). Electric field noise in ion traps is a major concern for high fidelity operations, as current two-qubit gate mechanisms use the ions motional state and are first order sensitive to changes in the motional state during the gate operation. In order for gate fidelities to reach error correcting thresholds of ~1e-4 control-voltage noise must be kept well bellow this value. 
+For room temperature traps typical electric field noise at the ion, due to yet-unknown surface effects, is around ($S_{\nu} \approx 10 \mu V /m\sqrt{Hz}$), which corresponds to an electrode-voltage noise of (~nV/sqrt(Hz)). Electric field noise in ion traps is a major concern for high fidelity operations, as current two-qubit gate mechanisms use the ions motional state and are first order sensitive to changes in the motional state during the gate operation. In order for gate fidelities to reach error correcting thresholds of ~1e-4 control-voltage noise must be kept well bellow this value. 
 
 ### Update rates
 
