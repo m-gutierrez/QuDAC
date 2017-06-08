@@ -8,7 +8,7 @@
 +	include assembly photos
 
 
-![QuDAC](images/QuDACBrd.png)
+![QuDAC](images/QuDACBrd.jpg)
 
 This is a 12-channel 20-bit, +/-10V (+/-20V optional) 2MSPS DAC board designed for the Quanta rack system (QuACK). The card was designed to meet the system requirements described bellow while also being simple to populate and interface with the Quanta ion trap system vacuum chamber. Since we assemble these by-hand, we desired as few components as possible while still meeting the requirements of precision experiments with trapped ions. All components should be standard and easy to source, and if possible relatively cheap. A huge exception to the cheap criterion was the use of the ad5791 DAC chip, however there is a a slightly cheaper 18-bit ad5781 which is a drop-in replacement, and a significantly cheaper 16-bit version which requires modification for the different package size.
 
